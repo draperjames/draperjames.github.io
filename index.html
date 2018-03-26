@@ -1,26 +1,23 @@
-<html>
-  <head>
-    <title>James Draper : Computational Biologist</title>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <div class="jumbotron text-center">
-      <h1>James Draper</h1>
-      <p>Computational Biologist</p>
-    </div>
-    <div class="container">
-      <div class="col-sm-4">
-        <h3>My OSS Projects</h3>
-        <p>
-          <a href="https://draperjames.github.io/guipyter/">guipyter</a><br>
-          <a href="https://draperjames.github.io/pandomics/">pandomics</a><br>
-          <a href="http://nbviewer.jupyter.org/github/draperjames/draperjames.github.io/blob/master/dominate_builder.ipynb">notebook for build this page</a><br>
-        </p>
-      </div>
-    </div>
-  </body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
